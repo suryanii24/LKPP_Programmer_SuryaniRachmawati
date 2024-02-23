@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rencana Pengadaan</title>
+</head>
+<body>
+<h1>Rencana Pengadaan</h1>
+<div id="Form Rencana Pengadaan"></div>
+
+<h2>Tambahkan Rencana Pengadaan</h2>
+<form id="addForm">
+  <label for="rupCode">RUP Code:</label>
+  <input type="number" id="rupCode" name="rupCode" required><br>
+  
+  <label for="packageName">Package Name:</label>
+  <input type="text" id="packageName" name="packageName" required><br>
+  
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required><br>
+  
+  <label for="ceilingValue">Ceiling Value:</label>
+  <input type="number" id="ceilingValue" name="ceilingValue" required><br>
+  
+  <label for="budgetYear">Budget Year:</label>
+  <input type="number" id="budgetYear" name="budgetYear" required><br>
+  
+  <label for="announcementDate">Announcement Date:</label>
+  <input type="datetime-local" id="announcementDate" name="announcementDate" required><br>
+  
+  <label for="procurementType">Procurement Type:</label>
+  <select id="procurementType" name="procurementType">
+    <option value="Barang">Barang</option>
+    <option value="Pekerjaan Konstruksi">Pekerjaan Konstruksi</option>
+    <option value="Jasa Konsultasi">Jasa Konsultasi</option>
+    <option value="Jasa Lainnya">Jasa Lainnya</option>
+  </select><br>
+  
+  <label for="procurementMethod">Procurement Method:</label>
+  <select id="procurementMethod" name="procurementMethod">
+    <option value="Thender">Thender</option>
+    <option value="E-Purchasing">E-Purchasing</option>
+    <option value="Pengadaan Langsung">Pengadaan Langsung</option>
+    <option value="Penunjukan Langsung">Penunjukan Langsung</option>
+    
+  </select><br>
+  
+  <label for="workLocation">Work Location:</label>
+  <input type="text" id="workLocation" name="workLocation" required><br>
+  
+  <button type="submit">Add Procurement Plan</button>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  loadProcurementPlans();
+
+  document.getElementById('addForm').addEventListener('submit', addProcurementPlan);
+});
+
+function loadProcurementPlans() {
+  
+}
+
+function addProcurementPlan(event) {
+  event.preventDefault();
+
+  const formData = new FormData(document.getElementById('addForm'));
+  const procurementPlan = {};
+  formData.forEach((value, key) => {
+    procurementPlan[key] = value;
+  });
+
+  
+}
+</script>
+</body>
+</html>
